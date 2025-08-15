@@ -41,8 +41,18 @@ debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
 
-List* crea_lista() {
+List* crea_lista() 
+{
    List* L = create_list();
+
+   int numeros[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+   int *vector = (int *)malloc(numeros, sizeof(int));
+
+   for (int i = 0; i < sizeof(vector); i++)
+   {
+      PushFront(*L, *vector[i]);
+   }
    return L;
 }
 
@@ -51,7 +61,16 @@ Ejercicio 2.
 Crea una función que reciba una lista de enteros (int*) y 
 retorne la suma de sus elementos.
 */
-int sumaLista(List *L) {
+int sumaLista(List *L) 
+{
+   int contador = Front(*L);
+
+   for (int i = 0, i < sizeof(L); i++)
+   {
+      contador += Current(*L[i]);
+   }
+
+   return contador;
    return 0;
 }
 
