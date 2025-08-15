@@ -51,7 +51,7 @@ List* crea_lista()
 
    for (int i = 0; i < sizeof(vector); i++)
    {
-      PushFront(*L, *vector[i]);
+      PushFront(L, &vector[i]);
    }
    return L;
 }
@@ -63,11 +63,11 @@ retorne la suma de sus elementos.
 */
 int sumaLista(List *L) 
 {
-   int contador = Front(*L);
+   int contador = Front(&L);
 
-   for (int i = 0, i < sizeof(L); i++)
+   for (int i = 1, i < sizeof(L); i++)
    {
-      contador += Current(*L[i]);
+      contador += Current(&L[i]);
    }
 
    return contador;
