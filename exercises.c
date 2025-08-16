@@ -71,7 +71,6 @@ int sumaLista(List *L)
    }
 
    return contador;
-   return 0;
 }
 
 /*
@@ -83,8 +82,17 @@ Asume que popCurrent luego de eliminar un elemento se
 posiciona en el elemento anterior.
 */
 
-void eliminaElementos(List*L, int elem){
-
+void eliminaElementos(List*L, int elem)
+{
+   for (int i = 0; i < sizeof(L); i+))
+   {
+       if (L[i] == elem)
+       {
+          popCurrent(L[i]);
+       }
+   }
+   return L;
+         
 }
 
 /*
@@ -94,7 +102,22 @@ El orden de ambas pilas se debe mantener.
 Puedes usar una pila auxiliar.
 */
 
-void copia_pila(Stack* P1, Stack* P2) {
+void copia_pila(Stack* P1, Stack* P2) 
+{
+   Stack* pilaAux = createStack();
+
+   for (int i = 0; i < sizeof(P1); i++)
+   {
+      Push(pilaAux, P1[sizeof(P1) - i]);
+   }
+
+   for (int j = 0; j < sizeof(pilaAux); j++)
+   {
+      Push(P2, pilaAux[sizeof(pilaAux) - j]);
+   }
+
+   return P2;
+         
 }
 
 /*
