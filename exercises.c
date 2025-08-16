@@ -51,7 +51,7 @@ List* crea_lista()
 
    for (int i = 0; i < sizeof(vector); i++)
    {
-      PushFront(L, &vector[i]);
+      PushFront(*L, &vector[i]);
    }
    return L;
 }
@@ -108,12 +108,12 @@ void copia_pila(Stack* P1, Stack* P2)
 
    for (int i = 0; i < sizeof(P1); i++)
    {
-      Push(pilaAux, P1[sizeof(P1) - i]);
+      Push(*pilaAux, *P1[sizeof(P1) - i]);
    }
 
    for (int j = 0; j < sizeof(pilaAux); j++)
    {
-      Push(P2, pilaAux[sizeof(pilaAux) - j]);
+      Push(*P2, *pilaAux[sizeof(pilaAux) - j]);
    }
 
    return P2;
